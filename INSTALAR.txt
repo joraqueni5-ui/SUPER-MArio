@@ -1,0 +1,45 @@
+SUPER MARIO - ESCENAS LISTAS PARA UNITY 6.3
+========================================
+Este ZIP incluye escenas .unity editables, sprites, scripts C# y audios.
+NO hay scripts generadores ni hay cambios en Packages/ o ProjectSettings/.
+
+INSTALACION (Windows):
+1. Cierra Unity para evitar conflictos con la importacion.
+2. Abre CMD en la carpeta SUPER-MArio:
+   cd /d "C:\Users\HP\Desktop\EVCONTINUA\ProyectosUnity\SUPER-MArio"
+3. RESPALDO fuera del proyecto (no omitir):
+   xcopy Assets\Scenes ..\MarioRespaldo\Scenes /E /I /Y
+   copy Assets\Scripts\GameManager.cs ..\MarioRespaldo\GameManager.cs
+4. Descomprime este ZIP directamente dentro de SUPER-MArio,
+   fusionando la carpeta Assets y reemplazando GameManager.cs y las
+   escenas 1-2subterraneo.unity, 2-2Acuatico.unity,
+   CastilloBowser.unity y GameOver.unity cuando Windows lo pregunte.
+   No se incluye el archivo .meta de las escenas existentes: Unity
+   debe conservar sus GUID originales.
+5. Reabre Unity 6000.3.16f1. Revisa que Console no muestre errores rojos.
+6. File > Build Profiles > Scene List. Incluye exactamente:
+   1-1 / 1-2subterraneo / 2-2Acuatico / CastilloBowser / GameOver / Victoria.
+   Unity puede requerir volver a agregar alguna escena a la lista.
+7. Ejecuta 1-2subterraneo, 2-2Acuatico o CastilloBowser directamente
+   para probarlas. Mario se mueve con A/D o flechas y salta/nada con espacio.
+8. Entra a la tuberia situada al FINAL de cada nivel para pasar al siguiente.
+   En castillo salta encima de Bowser tres veces, o toca la tuberia final.
+   Cuando se pierden las tres vidas aparece GameOver.
+
+IMPORTANTE:
+- Estas son escenas NUEVAS y editables: reemplazan tus borradores de esos
+  niveles si aceptas sobrescribirlos. Por eso es fundamental el respaldo.
+- Las escenas son aproximaciones jugables al estilo Mario, NO una replica
+  pixel-perfect de los niveles originales. El castillo es un diseño propio.
+- No se han podido probar en el editor Unity desde este entorno.
+- Las pistas de audio son originales y no reproducen musica comercial.
+- Si aparece un error de compilacion, NO hagas commit todavia.
+
+Subir a GitHub DESPUES de comprobar que funciona:
+  git add Assets/Scenes Assets/Scripts Assets/MarioNiveles Assets/Resources/Audio MEJORAS.md
+  git commit -m "feat: implementar niveles subterraneo acuatico castillo y Game Over"
+  git push origin main
+
+Antes de confirmar el commit, revisa "git diff --cached --stat".
+Si hay archivos ajenos a las mejoras, quitalos de stage con
+"git restore --staged RUTA".
